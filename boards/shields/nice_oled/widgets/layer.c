@@ -1,5 +1,7 @@
 #include "layer.h"
 #include <fonts.h>
+
+LV_FONT_DECLARE(pixel_operator_mono_22);
 #include <zephyr/kernel.h>
 
 void draw_layer_status(lv_obj_t *canvas, const struct status_state *state) {
@@ -7,7 +9,7 @@ void draw_layer_status(lv_obj_t *canvas, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_EPAPER_ON)
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_CENTER);
 #else
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_LEFT);
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_22, LV_TEXT_ALIGN_LEFT);
 #endif // CONFIG_NICE_EPAPER_ON
 
     char text[10] = {};
