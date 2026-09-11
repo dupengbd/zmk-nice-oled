@@ -28,7 +28,7 @@ static void draw_active_profile(lv_obj_t *canvas, const struct status_state *sta
     lv_draw_rect_dsc_t rect_white_dsc;
     init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
 
-    int offset = state->active_profile_index * 10;
+    int offset = state->active_profile_index * 9;
 
     lv_canvas_draw_rect(canvas, CONFIG_NICE_OLED_WIDGET_PROFILE_CUSTOM_X + offset, CONFIG_NICE_OLED_WIDGET_PROFILE_CUSTOM_Y, 3, 3, &rect_white_dsc);
 }
