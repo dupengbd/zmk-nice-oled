@@ -297,7 +297,7 @@ static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state)
     lv_draw_img_dsc_init(&img_dsc);
 
     // Las imágenes son 14x14 píxeles
-    const int img_size = 14;
+    const int img_size = 18;
     const int spacing = 2;
 
     // Posición Base según tipo de pantalla y layout
