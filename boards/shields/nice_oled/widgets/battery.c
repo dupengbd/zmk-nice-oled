@@ -4,7 +4,7 @@
 
 LV_IMG_DECLARE(bolt);
 
-/* 2x upscaled + dilated charging bolt (10x18) */
+/* charging bolt: hand-drawn 7x12 */
 static const uint8_t bolt_big_map[] = {
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
     0x00, 0x00, 0x00, 0xff,
@@ -13,33 +13,27 @@ static const uint8_t bolt_big_map[] = {
     0xff, 0xff, 0xff, 0xff,
     0x00, 0x00, 0x00, 0xff,
 #endif
-    0x01, 0xc0,
-    0x07, 0xc0,
-    0x07, 0xc0,
-    0x1f, 0x80,
-    0x1f, 0x80,
-    0x7e, 0x00,
-    0x7e, 0x00,
-    0xff, 0xc0,
-    0xff, 0xc0,
-    0xff, 0xc0,
-    0xff, 0xc0,
-    0x1f, 0x80,
-    0x1f, 0x80,
-    0x7e, 0x00,
-    0x7e, 0x00,
-    0xf8, 0x00,
-    0xf8, 0x00,
-    0xe0, 0x00,
+    0x02,
+    0x06,
+    0x0c,
+    0x18,
+    0x30,
+    0x60,
+    0xfe,
+    0x0c,
+    0x18,
+    0x30,
+    0x60,
+    0xc0,
 };
 
 const lv_img_dsc_t bolt_big = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.always_zero = 0,
     .header.reserved = 0,
-    .header.w = 10,
-    .header.h = 18,
-    .data_size = 44,
+    .header.w = 7,
+    .header.h = 12,
+    .data_size = 20,
     .data = bolt_big_map,
 };
 
@@ -130,7 +124,7 @@ static void draw_battery_icon(lv_obj_t *canvas, const struct status_state *state
     if (state->charging) {
         lv_draw_img_dsc_t img_dsc;
         lv_draw_img_dsc_init(&img_dsc);
-        lv_canvas_draw_img(canvas, x + 26, y - 4, &bolt_big, &img_dsc);
+        lv_canvas_draw_img(canvas, x + 27, y - 3, &bolt_big, &img_dsc);
     }
 }
 #endif /* CONFIG_NICE_OLED_WIDGET_BATTERY_GRAPHIC */
