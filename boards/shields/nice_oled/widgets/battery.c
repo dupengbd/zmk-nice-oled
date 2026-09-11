@@ -124,7 +124,7 @@ static void draw_battery_icon(lv_obj_t *canvas, const struct status_state *state
     if (state->charging) {
         lv_draw_img_dsc_t img_dsc;
         lv_draw_img_dsc_init(&img_dsc);
-        lv_canvas_draw_img(canvas, x + 27, y - 3, &bolt_big, &img_dsc);
+        lv_canvas_draw_img(canvas, x + 27, y - 1, &bolt_big, &img_dsc);
     }
 }
 #endif /* CONFIG_NICE_OLED_WIDGET_BATTERY_GRAPHIC */
